@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LP77 Tools</title>
+    
+    <title>LP77 | Ferramentas Grátis</title>
+    <meta name="description" content="Utilitários, aplicativos e ferramentas gratuitas desenvolvidas por LP77. Projetos seguros, offline e focados em performance.">
+    <meta name="keywords" content="LP77 Tools, ferramentas gratis, baixar apk, desenvolvedor LP77, utilitarios android, projetos web. free apk, LP77, LP, download, ferramentas,  screen saver, protetor de tela, apk">
+    <meta name="author" content="LP77">
+    <meta property="og:title" content="Ferramentas Grátis | LP77 Tools">
+    <meta property="og:description" content="Aplicativos e utilitários seguros desenvolvidos por LP77.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tool.lp77.com.br/">
     <link rel="icon" type="image/png" href="/icon.png">
     <style>
         * {
@@ -181,6 +189,75 @@
             font-weight: 500;
             letter-spacing: 1px;
         }
+        
+        /* --- ESTILOS DO MODAL DE TERMOS --- */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: var(--accent-color);
+        }
+
+        .modal h2 {
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .modal p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .legal-link {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-bottom: 25px; /* Empurra o rodapé para baixo */
+            display: block;
+            transition: color 0.2s;
+        }
+        
+        .legal-link:hover {
+            color: var(--accent-color);
+        }
+
         footer {
             text-align: center;
             padding: 30px;
@@ -199,6 +276,7 @@
         @media (max-width: 600px) {
             header h1 { font-size: 2.2rem; }
             .card { padding: 20px; }
+            .modal-content { padding: 25px; }
         }
     </style>
 </head>
@@ -227,9 +305,40 @@
         </div>
     </main>
 
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Termos de Uso e Direitos Autorais</h2>
+            <p><strong>1. Propriedade Intelectual:</strong> Todos os aplicativos e ferramentas disponibilizados neste site, incluindo códigos, design e interfaces, são de propriedade exclusiva do desenvolvedor.</p>
+            <p><strong>2. Proibições:</strong> É estritamente proibido realizar engenharia reversa (decompilar), modificar, revender, ou distribuir o aplicativo "Screen By LP" ou qualquer outro projeto deste site em lojas de terceiros ou sites de download sem autorização prévia.</p>
+            <p><strong>3. Uso Pessoal:</strong> O download é fornecido de forma gratuita. Compartilhar o arquivo diretamente com amigos e familiares é totalmente permitido, desde que não haja cobrança financeira ou redistribuição em massa.</p>
+        </div>
+    </div>
+
+    <span class="legal-link" onclick="openModal()">Termos de Uso</span>
+
     <footer>
         MADE BY <span>LP</span>
     </footer>
+
+    <script>
+        var modal = document.getElementById("termsModal");
+        
+        function openModal() {
+            modal.style.display = "flex";
+        }
+        
+        function closeModal() {
+            modal.style.display = "none";
+        }
+        
+        // Fecha o modal se o usuário clicar fora da caixinha
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
