@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Download Screen by LP | LP77 Tools</title>
+    <meta name="description" content="Baixe o Screen By LP: um protetor de tela minimalista e interativo para Android. 100% offline, seguro, sem anúncios e não consome dados.">
+    <meta name="keywords" content="ScreenByLp, protetor de tela android, screensaver android, app offline, animação matemática, LP77 Tools, baixar apk, Desenvoolvedor LP, Desenvolvedor LP77, LP, LP77, Tools, Tools Apk, Screen saver, screen apk, wallpaper apk">
+    <meta name="author" content="LP77">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Download Screen by LP | LP77 Tools">
+    <meta property="og:description" content="Protetor de tela minimalista e interativo para Android. 100% offline e seguro.">
+    <meta property="og:image" content="https://tool.lp77.com.br/screen/icon.png"> <meta property="og:url" content="https://tool.lp77.com.br/">
+    <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="/icon.png">
     <style>
         * {
@@ -153,6 +163,63 @@
             gap: 8px;
         }
 
+        /* --- NOVOS ESTILOS PARA O ABRE/FECHA --- */
+        details.privacy-accordion {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        summary.privacy-summary {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+        }
+
+        summary.privacy-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary.privacy-summary:hover {
+             background-color: rgba(112, 0, 255, 0.05);
+        }
+
+        summary.privacy-summary::after {
+            content: '▼';
+            font-size: 0.6rem;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary.privacy-summary::after {
+            transform: rotate(180deg);
+        }
+
+        .privacy-text {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+            margin-top: 15px;
+            padding-bottom: 10px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         footer {
             text-align: center;
             padding: 30px;
@@ -188,13 +255,13 @@
         <div class="download-container">
             <img src="icon.png" class="icon-app" alt="Logo">
             <h1>Screen by LP</h1>
-            <div class="version-info">APK Android • Versão 1.0</div>
+            <div class="version-info">APK Android • Versão 2.0</div>
             
             <p class="description">
                 Um protetor de tela minimalista e interativo. Desenvolvido para rodar 100% offline, gerando animações matemáticas em tempo real sem consumir sua franquia de dados.
             </p>
 
-            <a href="https://www.mediafire.com/file/3yevl5p07q7jt5o/ScreenByLp.apk/file" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <a href="https://www.mediafire.com/file/45jrsa635levwh8/ScreenByLp-V2.apk/file" target="_blank" rel="noopener noreferrer" class="btn-download">
                 Baixar APK (6 MB)
             </a>
 
@@ -202,6 +269,16 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                 100% Seguro. Sem anúncios.
             </div>
+
+            <details class="privacy-accordion">
+                <summary class="privacy-summary">
+                    Política de Privacidade
+                </summary>
+                <p class="privacy-text">
+                    O aplicativo "Screen By LP" é um projeto de portfólio offline. Nós não coletamos, armazenamos ou compartilhamos dados pessoais de nenhum tipo. O aplicativo foi projetado para não requerer acesso à internet e todas as suas funções são executadas localmente no seu dispositivo.
+                </p>
+            </details>
+
         </div>
     </main>
 
