@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LP77 Tools</title>
+    <link rel="icon" type="image/png" href="/icon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        :root {
+            --bg-color: #050505;
+            --surface-color: #111111;
+            --border-color: #222222;
+            --accent-color: #7000ff;
+            --text-main: #ffffff;
+            --text-muted: #888888;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-btn {
+            background-color: var(--border-color);
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            border: 1px solid transparent;
+        }
+
+        .nav-btn:hover {
+            background-color: transparent;
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            box-shadow: 0 0 15px rgba(112, 0, 255, 0.2);
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        main {
+            flex: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            align-items: start;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card:not(.card-soon):hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(112, 0, 255, 0.15);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(112, 0, 255, 0.1);
+            color: #b373ff;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(112, 0, 255, 0.2);
+        }
+
+        .card h2 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            background-color: var(--text-main);
+            color: var(--bg-color);
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: all 0.3s;
+            margin-top: auto;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: var(--text-main);
+        }
+
+        .card-soon {
+            background-color: transparent;
+            border: 1px dashed var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-muted);
+            pointer-events: none; 
+            user-select: none;
+        }
+
+        .card-soon p {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid var(--border-color);
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: var(--accent-color);
+            text-shadow: 0 0 10px rgba(112, 0, 255, 0.4);
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.2rem; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">LP77 <span>Tools</span></a>
+        <a href="https://bio.lp77.com.br" class="nav-btn">Página Inicial</a>
+    </nav>
+
+    <header>
+        <h1>Ferramentas Grátis</h1>
+        <p>Utilitários e experimentos em desenvolvimento.</p>
+    </header>
+
+    <main>
+        <div class="card">
+            <div><span class="tag">APK ANDROID</span></div>
+            <h2>Screen by LP</h2>
+            <p>Protetor de tela interativo offline. Desenvolvido com HTML5 e Canvas para renderizar animações matemáticas leves, seguras e sem anúncios.</p>
+            <a href="screen-saver" class="btn">Download</a>
+        </div>
+
+        <div class="card card-soon">
+            <p>+ Mais Utilidades em Breve...</p>
+        </div>
+    </main>
+
+    <footer>
+        MADE BY <span>LP</span>
+    </footer>
+
+</body>
+</html>
